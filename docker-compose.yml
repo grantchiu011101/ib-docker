@@ -1,0 +1,27 @@
+tws:
+  image: algo-ib-debug
+  container_name: ib-grant1101
+  ports:
+    - "4003:4003"
+    - "5900:5900"
+  volumes:
+    - ./IBController.ini:/root/IBController/IBController.ini
+    - ./jts.ini:/root/Jts/jts.ini
+  environment:
+    # - TZ=Australia/Adelaide
+    - TZ=Asia/Hong_Kong
+    # Variables pulled from /IBController/IBControllerGatewayStart.sh
+    - VNC_PASSWORD=password
+    - TWS_MAJOR_VRSN=960
+    - IBC_INI=/root/IBController/IBController.ini
+    - TRADING_MODE=
+    - IBC_PATH=/opt/IBController
+    - TWS_PATH=/root/Jts
+    - TWS_CONFIG_PATH=/root/Jts
+    - LOG_PATH=/opt/IBController/Logs
+    - TWSUSERID=grant1101
+    - TWSPASSWORD=Gf20141115
+    - FIXUSERID=
+    - FIXPASSWORD=
+    - JAVA_PATH=
+    - APP=GATEWAY
